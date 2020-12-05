@@ -1,0 +1,37 @@
+<!-- <label>Select date format</label> -->
+<!-- <p>
+	<select name="dateFormat" [(ngModel)]="dateFormat">
+  <option 
+  *ngFor="let format of formatList"
+  [value]="format"
+  >
+  {{ format }}
+  </option>
+</select>
+</p> -->
+
+<div class="date-container">
+	<input
+              id="tx_date"
+              type="text"
+              class="mt-25"
+              [(ngModel)]="currentDate"
+              [owlDateTime]="txDate"
+              [owlDateTimeTrigger]="txDate"
+              [max]="maxDate"
+              [placeholder]="'yyyy-mm-dd'"
+              >
+	<owl-date-time pickerType="calendar" #txDate>
+	</owl-date-time>
+	<!-- <input
+          type="text"
+          [owlDateTimeTrigger]="dt1"
+          placeholder="Date Time"
+          [value]="currentDate | date:dateFormat"
+  >
+
+	<owl-date-time #dt1></owl-date-time> -->
+</div>
+<h3>Current date: {{ currentDate }} </h3>
+
+<button (click)="onButtonClick()">Click Me</button>
